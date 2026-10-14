@@ -1,6 +1,6 @@
 # Handoff contract
 
-One envelope travels with the text through the pipeline. Fill only what is observed or user-given; leave unknown fields empty rather than guessing.
+One envelope travels with the text through the pipeline. Fill only what is observed or user-given; leave unknown fields empty rather than guessing. For `protected` the default is `all` (every number, verdict word, hedge, literal); write `all` explicitly rather than listing, and narrow it only if the user says so.
 
 ```yaml
 intent: restructure | trim | draft | de-ai | verify | audit-author | review-claims
@@ -17,7 +17,7 @@ voice_sample: path or empty
 steps_run:                                  # only with evidence
   - {skill: result-writeup-editor, evidence: "doc_metrics before/after table"}
 flags: [claim_may_be_overreaching, figures_in_images, author_stance_unconfirmed]
-passes_used: 0                              # cap 2
+passes_used: 0                              # each editing skill at most once; at most three editing skills
 ```
 
 Edge types between skills:

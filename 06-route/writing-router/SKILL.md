@@ -21,7 +21,9 @@ Classify once, route to the narrowest owner, keep context in one envelope, stop 
 | Did the edit change the meaning | `edit-verification` | Required after any edit; it runs `rewrite-fidelity` |
 | Chinese instructions for an agent (tool descriptions, prompts, error text) | `zh-disambiguate` (external) | Different goal: one reading for an agent |
 
-Combined requests use a pipeline below. Ambiguous: ask one question (what is the text for, who reads it, how much cutting).
+Combined requests use a pipeline below. **Tie-break for "simpler / shorter / too long / too narrated"**: it is a document-level request, route to `result-writeup-editor`; add `concise-edit` only when the request or the diagnosis names wordy sentences, and `ai-pattern-edit` only when it names machine-sounding text. Still ambiguous: ask one question (what is the text for, who reads it, how much cutting).
+
+"Optional" in a pipeline means: run it only when the user asks for it or a named trigger above holds. It never means "run it if there is time".
 
 ## Pipelines
 
@@ -43,6 +45,7 @@ Carry only observed or user-given facts. Template and field meanings: `reference
 2. Definition: one *pass* = one editing skill applied once to the text. Cap: each editing skill at most once per request, and at most three editing skills per request. A failed `edit-verification` returns to the editing skill that caused the flag, once; if it fails again, stop and report the flags.
 3. `edit-verification` runs after the last editing step and its `RESULT:` line is part of the deliverable. It is not enforced by tooling: do not hand text back as final without it, and say plainly if it was not run.
 4. Do not move a number, verdict, or hedge out of the protected list without saying so.
+4. A justified FAIL may ship only with every flag listed and justified (see `edit-verification`); an unjustified flag blocks delivery.
 5. Stop when the requested job is complete. Do not run optional steps unrequested.
 
 ## When an external skill is not installed
