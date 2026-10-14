@@ -1,0 +1,140 @@
+{
+ "nodes": [
+  "preregistered-experiment",
+  "independent-review",
+  "tech-article-draft",
+  "result-writeup-editor",
+  "concise-edit",
+  "ai-pattern-edit",
+  "preservation-check",
+  "human-in-the-loop-writing*",
+  "rewrite-fidelity*",
+  "zh-disambiguate*"
+ ],
+ "external": [
+  "human-in-the-loop-writing",
+  "rewrite-fidelity",
+  "zh-disambiguate"
+ ],
+ "edges": [
+  [
+   "writing-router",
+   "tech-article-draft",
+   "ROUTE"
+  ],
+  [
+   "writing-router",
+   "result-writeup-editor",
+   "ROUTE"
+  ],
+  [
+   "writing-router",
+   "concise-edit",
+   "ROUTE"
+  ],
+  [
+   "writing-router",
+   "ai-pattern-edit",
+   "ROUTE"
+  ],
+  [
+   "writing-router",
+   "independent-review",
+   "ROUTE"
+  ],
+  [
+   "tech-article-draft",
+   "result-writeup-editor",
+   "FEED"
+  ],
+  [
+   "result-writeup-editor",
+   "concise-edit",
+   "FEED"
+  ],
+  [
+   "concise-edit",
+   "ai-pattern-edit",
+   "FEED"
+  ],
+  [
+   "result-writeup-editor",
+   "preservation-check",
+   "VERIFY"
+  ],
+  [
+   "concise-edit",
+   "preservation-check",
+   "VERIFY"
+  ],
+  [
+   "ai-pattern-edit",
+   "preservation-check",
+   "VERIFY"
+  ],
+  [
+   "preservation-check",
+   "result-writeup-editor",
+   "REPAIR"
+  ],
+  [
+   "preservation-check",
+   "rewrite-fidelity*",
+   "FEED"
+  ],
+  [
+   "preservation-check",
+   "independent-review",
+   "ESCALATE"
+  ],
+  [
+   "result-writeup-editor",
+   "independent-review",
+   "ESCALATE"
+  ],
+  [
+   "preregistered-experiment",
+   "independent-review",
+   "FEED"
+  ],
+  [
+   "human-in-the-loop-writing*",
+   "result-writeup-editor",
+   "FEED"
+  ],
+  [
+   "writing-router",
+   "preservation-check",
+   "ROUTE"
+  ],
+  [
+   "writing-router",
+   "preregistered-experiment",
+   "ROUTE"
+  ],
+  [
+   "preservation-check",
+   "concise-edit",
+   "REPAIR"
+  ],
+  [
+   "preservation-check",
+   "ai-pattern-edit",
+   "REPAIR"
+  ],
+  [
+   "independent-review",
+   "preregistered-experiment",
+   "ESCALATE"
+  ]
+ ],
+ "guards": {
+  "pass_definition": "one editing skill applied once",
+  "max_passes_per_editing_skill": 1,
+  "max_editing_skills_per_request": 3,
+  "verify_after_last_edit": true,
+  "evidence_for_verification": "quote the RESULT: line of preserve.py",
+  "mark_executed_only_with_evidence": true,
+  "review_rerun_cycles": 1
+ }
+}
