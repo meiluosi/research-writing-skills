@@ -20,7 +20,7 @@ If the text is only clumsy sentences, use `concise-edit`. If it sounds machine-w
 
 ## Process
 
-Run the steps in this order. Steps 1 and 7 are mandatory.
+Run the steps in this order. Steps 1 and 7 are mandatory. Script and reference paths below are relative to this skill's folder: run from there or use absolute paths.
 
 ### 1. Diagnose before touching anything
 
@@ -43,10 +43,11 @@ Every level-2 heading names the function of the chapter, then its point: `N. fun
 | Process or protocol | scenario, pipeline, checkpoints, takeaways, blind spots |
 | Multi-round study | round 1/2/3 each with: method, result, issues found |
 | Summary | recap, conclusion, credibility, lessons, assessment, next steps, resources |
+| Self-assessment | what it set out to be, strengths, weaknesses, verdict, how to raise its value, how to present it |
 | Single-post retrospective | motivation, setup, original claim, review, corrected test, result, lessons, limits |
 | Glossary or reproduction note | exempt from the spine; keep it short and put it where the reader first needs it |
 
-Use the same function words across a series. Level-3 headings may use `N.M function: point` or plain labels; be consistent inside a post. Replace bold paragraph leaders ("**Result.** ...") with level-3 headings. A heading that is only a topic ("Results") gets its point: "3. Results: four findings". Details: `references/heading-spines.md`.
+Replace a bold paragraph leader (a bold label that opens a paragraph, such as "**Result.** ...") with a level-3 heading; bold items inside numbered or bulleted lists stay as they are. Use the same function words across a series. Level-3 headings may use `N.M function: point` or plain labels; be consistent inside a post. Replace bold paragraph leaders ("**Result.** ...") with level-3 headings. A heading that is only a topic ("Results") gets its point: "3. Results: four findings". Details: `references/heading-spines.md`.
 
 ### 3. Turn narration into statements
 
@@ -79,11 +80,11 @@ Standard strength aims at roughly a quarter off the **original prose**; tables y
 6. **One document repeating itself.** If a conclusion appears in the summary line, in "what remains", and in the lessons, keep the fullest version in one place (usually the final chapter) and shorten the others to a pointer. If a limit is repeated inside the same document, state it once.
 7. **Do not cut**: numbers, intervals, sample sizes, the reason for a design choice, a caveat that changes how a result should be read.
 
-Strength levels: light (wording only), standard (above), heavy (also merge chapters). Every level cuts only what the protected list (numbers, verdict words, hedges, literals) allows. Ask which level if the author has not said.
+Strength levels: light (wording only), standard (above), heavy (also merge chapters). Every level cuts only what the protected list (numbers, verdict words, hedges, literals) allows. Ask which level if the author has not said. If less than about 5% of the text can be removed under the protected list, say the document is already tight and stop cutting; do not force a quota.
 
 ### 5. Explain hard mechanisms in plain language
 
-When a mechanism is only described in jargon, add a table:
+Skip this step (say "skipped: no unexplained mechanism") unless a term or mechanism is used without definition. When a mechanism is only described in jargon, add a table:
 
 | Mode | Plain analogy | What actually happens | Real or assumed |
 |---|---|---|---|
@@ -92,7 +93,7 @@ Add one when a term or mechanism is used without definition and a non-specialist
 
 ### 6. Add the reason for each design choice
 
-For a design the reader may question, add a two-column table `design | reason`. Reasons must be real: a source, a constraint, a prior result, or an honest "no biological basis, the simplest interface". Never invent a rationale. Take reasons from the text, including later chapters (add a pointer if the reason lives elsewhere). If the author gave none and the reader would plausibly ask, add a row "reason not recorded" and list it in your report; if the reader would not ask, leave the design out of the table.
+Skip this step (say "skipped: no design choices stated") when the text states none. For a design the reader may question, add a two-column table `design | reason`. Reasons must be real: a source, a constraint, a prior result, or an honest "no biological basis, the simplest interface". Never invent a rationale. Take reasons from the text, including later chapters (add a pointer if the reason lives elsewhere). If the author gave none and the reader would plausibly ask, add a row "reason not recorded" and list it in your report; if the reader would not ask, leave the design out of the table.
 
 ### 7. Verify
 
@@ -100,7 +101,7 @@ For a design the reader may question, add a two-column table `design | reason`. 
 python3 scripts/doc_metrics.py --compare before.md after.md
 ```
 
-Then run `edit-verification` (it calls `rewrite-fidelity`) and quote its `RESULT:` line in your report. Required: no number lost or added without an explicit reason, no claim strengthened ("uncertain" must not become "no effect"), no hedge dropped without a stated reason, interval bounds intact. A PASS is not proof of equivalence: read comparisons, scope, and condition attachment yourself. Re-run `doc_metrics.py` on the result and report before and after.
+Then run `edit-verification` (it calls `rewrite-fidelity`) and quote its `RESULT:` line in your report. Heading numerals added by the spine are ignored by the number check; a number flagged for any other reason must be justified in the report. Required: no number lost or added without an explicit reason, no claim strengthened ("uncertain" must not become "no effect"), no hedge dropped without a stated reason, interval bounds intact. A PASS is not proof of equivalence: read comparisons, scope, and condition attachment yourself. Re-run `doc_metrics.py` on the result and report before and after.
 
 ## Output
 

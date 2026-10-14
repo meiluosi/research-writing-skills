@@ -10,7 +10,7 @@ The gate at the end of every editing step. The mechanical work is done by the `r
 
 ## Process
 
-1. **Run the check**
+1. **Run the check** (path relative to this skill's folder, or use the absolute path)
    ```bash
    scripts/verify.sh before.md after.md
    ```
@@ -22,7 +22,7 @@ The gate at the end of every editing step. The mechanical work is done by the `r
    - a cause added where the source only listed two facts;
    - scope narrowed or widened with different words;
    - units and denominators ("per 1000", "relative to the reference").
-3. **Decide each flag**: restore the source wording, or state why the change is correct. Never edit the check to make a flag go away. If the source itself looks wrong, tell the author; do not fix it silently.
+3. **Decide each flag**: restore the source wording, or state why the change is correct. A FAIL whose every flag is justified in writing is reported as `FAIL (all flags justified)` and may ship with that list; any unjustified flag blocks delivery. The `RESULT:` line itself is never edited. Never edit the check to make a flag go away. If the source itself looks wrong, tell the author; do not fix it silently.
 4. **Report** the `RESULT:` line verbatim, each flag with your decision, and what is unverified (figures in images, text outside the files).
 
 ## Rules
