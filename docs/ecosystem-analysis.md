@@ -104,3 +104,4 @@ Six owned skills plus three external. The two verifier-style and two pattern-sty
 - Done: `concise-edit` keeps the Chinese rules and links out for English; `ai-pattern-edit` keeps the Chinese list and the domain-term guard and links to `external/humanizer`.
 - Done: skills are grouped by stage (`01-evidence` ... `06-route`), external skills are submodules under `external/`, and `scripts/install.sh` installs the chain.
 - Open: precision of the narration metric on a labelled set; blind run of the whole chain on a document not used so far.
+- Done (v0.3.1): `rewrite-fidelity` gained `compare.dir` (comparison direction: a reversed who-beats-whom is an error). The remaining largest blind spots are conditions re-attached to a different claim and causes added where the source only listed facts; both stay on the manual list in `edit-verification`.

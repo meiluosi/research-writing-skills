@@ -14,11 +14,11 @@ The gate at the end of every editing step. The mechanical work is done by the `r
    ```bash
    scripts/verify.sh before.md after.md
    ```
-   It runs `rewrite-fidelity` (literals, numbers including Chinese and English number words, modality, conditions, negation, scope bounds, quoted labels, per-operator comparisons, claim-strength words), then the number comparison from `result-writeup-editor`. Output ends with `RESULT: FAIL | PASS WITH WARNINGS | PASS`.
+   It runs `rewrite-fidelity` (literals, numbers including Chinese and English number words, modality, conditions, negation, scope bounds, quoted labels, per-operator comparisons, who-beats-whom direction, claim-strength words), then the number comparison from `result-writeup-editor`. Output ends with `RESULT: FAIL | PASS WITH WARNINGS | PASS`.
 2. **Read the manual list** (scripts cannot see these):
    - a condition still present but now attached to a different claim;
    - a negation moved to another verb;
-   - a comparison reversed in words ("A better than B" to "B better than A");
+   - a comparison reversed in words that the checker did not recognise (`compare.dir` covers the common forms: is better than, outperforms, 比…好, 优于, 不如, >);
    - a cause added where the source only listed two facts;
    - scope narrowed or widened with different words;
    - units and denominators ("per 1000", "relative to the reference").
