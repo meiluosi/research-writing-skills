@@ -1,7 +1,7 @@
 ---
 name: result-writeup-editor
-description: "Not for sentence polish (concise-edit) or AI-sounding patterns (ai-pattern-edit). Use to edit a result-heavy document at the DOCUMENT level: experiment write-ups, project retrospectives, technical blog posts, research READMEs, series of posts with numbers and claims. It restructures headings into a consistent spine ('N. function: point'), turns first-person process narration ('I did / I checked / I wrote') into plain statements of fact, cuts repeated content (each fact once, limitations consolidated), adds plain-language explanations of hard mechanisms, adds 'why this design' tables, and verifies that no number or claim strength changed. Works in Chinese and English. Triggers: restructure headings, cut the narration, too much 'I did', remove repetition across the series, explain this mechanism in plain language, 做减法, 标题结构化, 去掉流水账, 少一点我做了什么, 补大白话, 补为什么."
-version: 0.1.0
+description: "Not for sentence polish (concise-edit) or AI-sounding patterns (ai-pattern-edit). Use to edit a result-heavy document (experiment write-ups, audits, retrospectives, technical posts, a series) at the DOCUMENT level: headings into a spine 'N. function: point', process narration into statements, cut repetition, plain-language explainers, 'why this design' tables, then verify. Triggers: restructure headings, cut the narration, 做减法, 标题结构化, 去掉流水账, 补大白话, 补为什么."
+version: 0.2.0
 ---
 
 # Result Write-up Editor
@@ -100,7 +100,7 @@ For a design the reader may question, add a two-column table `design | reason`. 
 python3 scripts/doc_metrics.py --compare before.md after.md
 ```
 
-Then run `preservation-check` (or the stronger `rewrite-fidelity` skill if installed) and quote its `RESULT:` line in your report. Required: no number lost or added without an explicit reason, no claim strengthened ("uncertain" must not become "no effect"), no hedge dropped without a stated reason, interval bounds intact. A PASS is not proof of equivalence: read comparisons, scope, and condition attachment yourself. Re-run `doc_metrics.py` on the result and report before and after.
+Then run `edit-verification` (it calls `rewrite-fidelity`) and quote its `RESULT:` line in your report. Required: no number lost or added without an explicit reason, no claim strengthened ("uncertain" must not become "no effect"), no hedge dropped without a stated reason, interval bounds intact. A PASS is not proof of equivalence: read comparisons, scope, and condition attachment yourself. Re-run `doc_metrics.py` on the result and report before and after.
 
 ## Output
 
@@ -113,7 +113,7 @@ Return: the edit plan, the edited file(s) (or a diff when asked), a metrics tabl
 | Author is absent, text has no stance or experience | `human-in-the-loop-writing` (adds the author; this skill removes logistics) |
 | Sentence-level concision | `concise-edit` |
 | AI-sounding patterns | `ai-pattern-edit` |
-| Prove numbers and claims survived | `preservation-check`, or `rewrite-fidelity` |
+| Prove numbers and claims survived | `edit-verification` (uses `rewrite-fidelity`) |
 | A draft needs a first structure | `tech-article-draft` |
 | The results themselves may be wrong or overclaimed | `independent-review`, `preregistered-experiment` |
 | Which skill, in what order | `writing-router` |

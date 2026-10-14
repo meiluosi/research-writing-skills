@@ -37,7 +37,7 @@ Each chapter: function, one-sentence point, the evidence rows it uses, the figur
 - Never invent anecdotes, quotes, numbers, results, or feelings. A claim without an evidence row is cut or becomes a question.
 
 ### 5. Hand back
-List the slots (ranked), the stances you wrote on the author's behalf, and facts to verify. Tag every such stance in the draft itself as `[CONFIRM: ...]` so it cannot be published unreviewed. Then route: author fills slots -> `result-writeup-editor` -> `concise-edit` -> `ai-pattern-edit` -> `preservation-check`.
+List the slots (ranked), the stances you wrote on the author's behalf, and facts to verify. Tag every such stance in the draft itself as `[CONFIRM: ...]` so it cannot be published unreviewed. Then route: author fills slots -> `result-writeup-editor` -> `concise-edit` -> `ai-pattern-edit` -> `edit-verification`.
 
 ## Title rules
 A short noun phrase or the question the page answers; specific enough to pick the piece out of many; no appended explainer after a dash or colon. Put the explanation in the subtitle line.

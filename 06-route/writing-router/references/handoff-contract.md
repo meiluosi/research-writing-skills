@@ -23,7 +23,7 @@ passes_used: 0                              # cap 2
 Edge types between skills:
 - ROUTE: choose the owner.
 - FEED: pass evidence (metrics, flags) without turning it into a command.
-- VERIFY: require `preservation-check` on before/after.
+- VERIFY: require `edit-verification` on before/after.
 - REPAIR: return a failed check to the editing skill once.
 - ESCALATE: a flag that the claim itself may be wrong goes to `independent-review`.
 

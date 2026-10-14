@@ -1,0 +1,18 @@
+[submodule "external/human-in-the-loop-writing"]
+	path = external/human-in-the-loop-writing
+	url = https://github.com/meiluosi/human-in-the-loop-writing.git
+[submodule "external/rewrite-fidelity-skill"]
+	path = external/rewrite-fidelity-skill
+	url = https://github.com/meiluosi/rewrite-fidelity-skill.git
+[submodule "external/zh-disambiguate-skill"]
+	path = external/zh-disambiguate-skill
+	url = https://github.com/meiluosi/zh-disambiguate-skill.git
+[submodule "external/humanizer"]
+	path = external/humanizer
+	url = https://github.com/meiluosi/humanizer.git
+[submodule "external/stop-slop"]
+	path = external/stop-slop
+	url = https://github.com/meiluosi/stop-slop.git
+[submodule "external/avoid-ai-writing"]
+	path = external/avoid-ai-writing
+	url = https://github.com/meiluosi/avoid-ai-writing.git

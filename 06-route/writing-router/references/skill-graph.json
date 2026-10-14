@@ -6,7 +6,7 @@
   "result-writeup-editor",
   "concise-edit",
   "ai-pattern-edit",
-  "preservation-check",
+  "edit-verification",
   "human-in-the-loop-writing*",
   "rewrite-fidelity*",
   "zh-disambiguate*"
@@ -59,31 +59,31 @@
   ],
   [
    "result-writeup-editor",
-   "preservation-check",
+   "edit-verification",
    "VERIFY"
   ],
   [
    "concise-edit",
-   "preservation-check",
+   "edit-verification",
    "VERIFY"
   ],
   [
    "ai-pattern-edit",
-   "preservation-check",
+   "edit-verification",
    "VERIFY"
   ],
   [
-   "preservation-check",
+   "edit-verification",
    "result-writeup-editor",
    "REPAIR"
   ],
   [
-   "preservation-check",
+   "edit-verification",
    "rewrite-fidelity*",
    "FEED"
   ],
   [
-   "preservation-check",
+   "edit-verification",
    "independent-review",
    "ESCALATE"
   ],
@@ -104,7 +104,7 @@
   ],
   [
    "writing-router",
-   "preservation-check",
+   "edit-verification",
    "ROUTE"
   ],
   [
@@ -113,12 +113,12 @@
    "ROUTE"
   ],
   [
-   "preservation-check",
+   "edit-verification",
    "concise-edit",
    "REPAIR"
   ],
   [
-   "preservation-check",
+   "edit-verification",
    "ai-pattern-edit",
    "REPAIR"
   ],

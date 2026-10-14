@@ -98,3 +98,9 @@ Six owned skills plus three external. The two verifier-style and two pattern-sty
 - `result-writeup-editor` narration metric: on a labelled set of 100 sentences, precision of the narration flag is reported; target at least 0.8 before the threshold is used to rank files.
 - A blind run of P2 on a document not used during development, reviewed by an independent agent, with no protected item changed.
 - Token cost: each skill's description under 400 characters and its SKILL.md under 6 KB, with references loaded on demand.
+
+## 6. Status of the consolidation (v0.3)
+- Done: `rewrite-fidelity` now has per-operator comparison checks, claim-strength words, scientific-notation numbers and a `RESULT:` line (44/44 self-tests; pushed to its repository); `preservation-check` was removed and replaced by the thin `edit-verification` policy that calls `rewrite-fidelity`.
+- Done: `concise-edit` keeps the Chinese rules and links out for English; `ai-pattern-edit` keeps the Chinese list and the domain-term guard and links to `external/humanizer`.
+- Done: skills are grouped by stage (`01-evidence` ... `06-route`), external skills are submodules under `external/`, and `scripts/install.sh` installs the chain.
+- Open: precision of the narration metric on a labelled set; blind run of the whole chain on a document not used so far.

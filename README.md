@@ -1,44 +1,36 @@
-# Skills
+# Research and writing skills
 
-Two families that work together: **research process** (get a result you can trust) and **writing** (say it clearly and keep it true). `writing-router` connects them.
+Skills for getting a result you can trust and writing it up so it stays true. Organised as a chain; each folder is one stage, and every stage links to the next.
 
 ```
-            results you can trust                         a document readers can use
-  preregistered-experiment -> independent-review  ->  tech-article-draft -> result-writeup-editor -> concise-edit -> ai-pattern-edit
-                                   ^                                                 |                 |               |
-                                   |_____________ ESCALATE (claim may be wrong) ____|_________________|_______________|
-                                                                                     v
-                                                                              preservation-check  (required after any edit)
+01 Evidence -> 02 Draft -> 03 Structure -> 04 Language -> 05 Verify
+                                                              ^
+                                    06 Route (decides order, keeps one handoff envelope)
 ```
 
-| Skill | Level | One line |
-|---|---|---|
-| [`preregistered-experiment`](preregistered-experiment/SKILL.md) | process | Register hypotheses and decision rules before running; freeze with hashes; verdict rules; deviation log |
-| [`independent-review`](independent-review/SKILL.md) | process | Context-free sub-agent review for leakage, no-op baselines, broken controls, overclaiming |
-| [`tech-article-draft`](tech-article-draft/SKILL.md) | writing | Draft from an evidence inventory, with slots for the author's experience |
-| [`result-writeup-editor`](result-writeup-editor/SKILL.md) | writing, **document level** | Heading spine, narration to statements, subtraction, plain-language explainers, "why" tables, number check |
-| [`concise-edit`](concise-edit/SKILL.md) | writing, sentence level | Omit needless words, active voice, concrete; English and Chinese rules |
-| [`ai-pattern-edit`](ai-pattern-edit/SKILL.md) | writing, style | Remove machine-sounding patterns; Chinese list; domain-term guard |
-| [`preservation-check`](preservation-check/SKILL.md) | verification | Numbers, literals, verdict words, claim strength, hedges, negations before vs after |
-| [`writing-router`](writing-router/SKILL.md) | routing | Which skill, in what order, with one handoff envelope and guards |
+| Stage | Folder | Skills here | External (submodules in `external/`) |
+|---|---|---|---|
+| 01 Evidence | [`01-evidence`](01-evidence/README.md) | `preregistered-experiment`, `independent-review` | |
+| 02 Draft | [`02-draft`](02-draft/README.md) | `tech-article-draft` | `human-in-the-loop-writing` (author presence) |
+| 03 Structure | [`03-structure`](03-structure/README.md) | `result-writeup-editor` (document level) | |
+| 04 Language | [`04-language`](04-language/README.md) | `concise-edit`, `ai-pattern-edit` | `humanizer`, `stop-slop`, `avoid-ai-writing` (reference forks), `zh-disambiguate` (text for agents) |
+| 05 Verify | [`05-verify`](05-verify/README.md) | `edit-verification` | `rewrite-fidelity` (the checker) |
+| 06 Route | [`06-route`](06-route/README.md) | `writing-router` | |
 
-## What is different here
-Existing writing skills mostly edit sentences or generate articles from a topic. This set adds:
-- an editor for the **document level** of result-heavy writing (headings, narration, repetition, hard mechanisms), with measurable metrics (`result-writeup-editor/scripts/doc_metrics.py`);
-- a verification step wired into every editing skill (`preservation-check/scripts/preserve.py`, with tests);
-- **Chinese-first** pattern lists and rules;
-- explicit conflict rules between skills (author voice vs cutting narration, hedges vs concision), written in `writing-router/references/conflict-rules.md`.
-
-## External skills used when installed
-| Skill | Source | Used for |
-|---|---|---|
-| `human-in-the-loop-writing` | github.com/meiluosi/human-in-the-loop-writing | Author presence, five-question audit |
-| `rewrite-fidelity` | github.com/meiluosi/rewrite-fidelity-skill | Strict meaning check |
-| `zh-disambiguate` | github.com/meiluosi/zh-disambiguate-skill | Chinese text meant for agents |
-| `humanizer`, `stop-slop`, `avoid-ai-writing` | see `NOTICE.md` | Longer English pattern lists |
+Full chain, pipelines and when to use which: [`docs/chain.md`](docs/chain.md). What each skill adds and what is redundant: [`docs/ecosystem-analysis.md`](docs/ecosystem-analysis.md). Reviews and tests: [`verification/`](verification/).
 
 ## Install
-Copy the folders you want into `~/.claude/skills/` (or a project's `.claude/skills/`). Scripts need Python 3 and the standard library.
+```bash
+git clone --recurse-submodules https://github.com/meiluosi/research-writing-skills.git
+cd research-writing-skills && scripts/install.sh        # symlinks every skill into ~/.claude/skills
+```
+`scripts/install.sh --copy` copies instead of linking. Scripts need Python 3 and the standard library only.
+
+## External repositories
+| In `external/` | Upstream | Licence |
+|---|---|---|
+| `human-in-the-loop-writing`, `rewrite-fidelity-skill`, `zh-disambiguate-skill` | github.com/meiluosi (own repositories; edit them there) | as in each repository |
+| `humanizer`, `stop-slop`, `avoid-ai-writing` | forks of blader/humanizer, hardikpandya/stop-slop, conorbronsdon/avoid-ai-writing | MIT, see each |
 
 ## Status
-Version 0.2. The writing family was developed while editing one seven-post Chinese series, then tested blind on one further document and reviewed by an independent agent; fixes from both are included. It has not been used on other kinds of text. Reviews are in `verification/`; scope and credits are in `NOTICE.md`.
+Version 0.2 (MIT, see `LICENSE`, credits in `NOTICE.md`). Developed while editing one seven-post Chinese series, tested blind on one further document, reviewed by an independent agent. Not yet used on other kinds of text.
