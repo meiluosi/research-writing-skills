@@ -1,0 +1,612 @@
+[
+{
+"id": 0,
+"src": "ml-cl-audit/BLOG.md",
+"text": "SLDA 还存共享协方差）。"
+},
+{
+"id": 1,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "一个负面但有信息的结论**：在这个模型里，门控隔间在匹配学习量下没有遗忘优势，有界规则也不是原因。"
+},
+{
+"id": 2,
+"src": "ml-cl-audit/BLOG.md",
+"text": "类增量持续学习**：模型依次学几组新类别（任务），测试时要在见过的所有类别上分类，没有任务编号。"
+},
+{
+"id": 3,
+"src": "ml-cl-audit/BLOG.md",
+"text": "它不影响结论，只是差点让我拿缺了一半的数据下结论。"
+},
+{
+"id": 4,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "EWC 实现太弱**（Fisher 太小、惩罚太弱），而且 λ 是在测试集上选的。"
+},
+{
+"id": 5,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "有界规则消融只是一个小对照，没有发展成元学习或结构自我改进。"
+},
+{
+"id": 6,
+"src": "ml-cl-audit/ASSESSMENT.md",
+"text": "2. **只审计了一篇论文**，CIFAR-100 的数字没有数值复现（论文特征处理没写清），所以 CIFAR 只能作相对比较。"
+},
+{
+"id": 7,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "一套可复现的流程**：真实连接组 → 隔间标签 → 学习模型 → 预先登记 → 独立审查。"
+},
+{
+"id": 8,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "写这份评估的人（我）参与设计了项目的大部分，所以有偏向；"
+},
+{
+"id": 9,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我起了三个独立的 LLM agent（和我是同一个模型家族，所以不是完全独立的视角）：一个核对文献，一个检查标签是否循环，一个以怀疑的态度审查全部代码和统计。"
+},
+{
+"id": 10,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "5. **大量精力花在修自己造成的错误上**。"
+},
+{
+"id": 11,
+"src": "fly-foraging/NOTES.md",
+"text": "随机稀疏 54.8 对 50.9，方向一致）。"
+},
+{
+"id": 12,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "这对 ML 研究工程、评测、可复现性方向的岗位是有分量的；"
+},
+{
+"id": 13,
+"src": "fly-foraging/NOTES.md",
+"text": "H1（进化 − 默认，门槛：区间下界>0 且均值≥6，≥2/3 种子）：in-dist 仅 random 成立（2/3）；"
+},
+{
+"id": 14,
+"src": "ml-cl-audit/ASSESSMENT.md",
+"text": "1. **新颖性有限，且我没有系统核实**：评测纪律（匹配可塑性、公平调参）已有文献；"
+},
+{
+"id": 15,
+"src": "ml-cl-audit/BLOG.md",
+"text": "前者（我最初登记的）把一个类的所有样本连续喂入；"
+},
+{
+"id": 16,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "一个描述性结果**：隔间标签与 DAN→MBON 连接高度一致（91%，打乱后约 11%；"
+},
+{
+"id": 17,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "连续学习 12 或 48 个任务，每个任务 5 个气味、一个\"趋近或回避\"的标签。"
+},
+{
+"id": 18,
+"src": "ml-cl-audit/BLOG.md",
+"text": "CIFAR-100 数值上没复现**，我没有去调参凑，而是把两种特征当作两个区间，**只做方法间的相对比较**（放大到 224 是看到 32×32 的结果之后才加的，属于事后调整）。"
+},
+{
+"id": 19,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我的\"多头\"基线与单头 delta 数学等价**，结果逐位相同。"
+},
+{
+"id": 20,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "探索阶段我发现，真实隔间的遗忘比打乱隔间**略多**（注意方向：这与\"隔间化有保护作用\"的预期相反）。"
+},
+{
+"id": 21,
+"src": "ml-cl-audit/BLOG.md",
+"text": "但 EWC 和微调在两种流里都基本崩溃：交错流下学习时准确率 0.98，学完全部任务后最终只有 0.10（只记得最后一个任务）；"
+},
+{
+"id": 22,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "一句话版本**：我用真实的果蝇连接组搭了一个\"蘑菇体持续学习\"的小模型，起初得到一个很完整的故事；"
+},
+{
+"id": 23,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "代码审查指出的问题，我能复核的都复核过："
+},
+{
+"id": 24,
+"src": "ml-cl-audit/BLOG.md",
+"text": "把分类器换成**同一个**最近类均值（欧氏），稀疏相对稠密的优势缩到 +0.033、+0.017、−0.008；"
+},
+{
+"id": 25,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "上图只展示 8 个设定中的一个（相似气味、T=48，男女电路均值）。"
+},
+{
+"id": 26,
+"src": "ml-cl-audit/BLOG.md",
+"text": "1. **先复现**：目标数字和容差先写下并锁哈希。"
+},
+{
+"id": 27,
+"src": "fly-foraging/NOTES.md",
+"text": "修改后全部重跑，以重跑结果为准。"
+},
+{
+"id": 28,
+"src": "ml-cl-audit/BLOG.md",
+"text": "我选这两个是因为论文没写清，我的复现（0.340 与 0.508）把论文的 0.41 夹在中间。"
+},
+{
+"id": 29,
+"src": "ml-cl-audit/BLOG.md",
+"text": "H2：我登记的稠密对照夸大了稀疏表示的价值（探索性对照看到结果后加入）。"
+},
+{
+"id": 30,
+"src": "ml-cl-audit/ASSESSMENT.md",
+"text": "它能被一句话讲清：我复核了一个\"仿生\"持续学习方法，发现它被更标准的免回放基线超过，并发现其关键对照夸大了结论，过程中也更正了自己的错误。"
+},
+{
+"id": 31,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "学习规则是抽象的，没有放进脉冲模型；"
+},
+{
+"id": 32,
+"src": "ml-cl-audit/BLOG.md",
+"text": "分析脚本里的几处问题（对比方按测试集选、种子按位置配对、键解析错误）在审查之后更正。"
+},
+{
+"id": 33,
+"src": "ml-cl-audit/BLOG.md",
+"text": "memory loss 0.089 对 0.07）。"
+},
+{
+"id": 34,
+"src": "fly-foraging/NOTES.md",
+"text": "页面：（由  +  +  经  组装，370 KB 单文件）。"
+},
+{
+"id": 35,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "FlyWire 上 5/11，按规则是\"证据不足\"，但方向完全一致）。"
+},
+{
+"id": 36,
+"src": "ml-cl-audit/BLOG.md",
+"text": "H3（登记）：按登记判据整体未完成；"
+},
+{
+"id": 37,
+"src": "ml-cl-audit/ASSESSMENT.md",
+"text": "1. **问题更尖锐、结果无论正负都有信息量**：FlyModel 是否优于简单的免回放基线，答案是\"否\"，而且是在预先登记、独立验证集调参、独立审查之后得到的。"
+},
+{
+"id": 38,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "在稀疏化编码上回路学不好，匹配学习量比较在 raw 编码上仍无法检验，只有基线排序（回路不如 EWC）稳健。"
+},
+{
+"id": 39,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "2. **可复现的工程流水线**：解析两个连接组、隔间标签映射、MaleCNS 的 LIF 引擎接入、气味编码库、基线实现。"
+},
+{
+"id": 40,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "25 个格子的均值为负，即不分隔间的遗忘反而略少。"
+},
+{
+"id": 41,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "这个项目回答的是一个神经科学–持续学习的问题，不是 RSI 的问题。"
+},
+{
+"id": 42,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "3. **给 LIF 这条线设止损线**：如果稀疏化后的 LIF 编码仍支撑不了学习，就收尾写作，不要继续往里加复杂度。"
+},
+{
+"id": 43,
+"src": "ml-cl-audit/BLOG.md",
+"text": "这个\"约 17 倍\"（MNIST-20）的比值是探索性的，用余弦时是 +0.029、+0.023、−0.007，比值会变，且强特征上的 −0.01 很小，不要过度解读。"
+},
+{
+"id": 44,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "纪律**：每一轮确认性实验都先写预先登记、记录哈希、再用新种子运行，偏离单独记录。"
+},
+{
+"id": 45,
+"src": "ml-cl-audit/BLOG.md",
+"text": "弱特征 / 强特征**：CIFAR-100 用 ImageNet 预训练的 ResNet18 提取 512 维特征。"
+},
+{
+"id": 46,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "1. **科学新颖性低，且我没有系统核实**。"
+},
+{
+"id": 47,
+"src": "fly-foraging/NOTES.md",
+"text": "9 次进化（3 种连线 × 3 个进化种子）；"
+},
+{
+"id": 48,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "5. **基线要认真实现**。"
+},
+{
+"id": 49,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "更关键的是：**活跃比例和气味间重叠一起下降，但从不放电的 KC 比例始终很高（稀疏设定里 75% 到 100%）**。"
+},
+{
+"id": 50,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我试着用两个旋钮把它调稀疏**：全局突触增益，和 APL（抑制 KC 的单个神经元）到 KC 的抑制强度。"
+},
+{
+"id": 51,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "一个真正新且有用的问题是：**已发表的\"果蝇启发\"持续学习方法（如 FlyPrompt 一类）的结论，在匹配学习量下还成立吗？"
+},
+{
+"id": 52,
+"src": "ml-cl-audit/BLOG.md",
+"text": "环境、数据来源与步骤见 ；"
+},
+{
+"id": 53,
+"src": "ml-cl-audit/BLOG.md",
+"text": "探索性对照（无截断、表示 × 分类器）是看到结果后加的，需要独立复核。"
+},
+{
+"id": 54,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我想把它拆开问：**起作用的是\"分了隔间\"这件事，还是\"这样分\"的具体内容？"
+},
+{
+"id": 55,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "环境、数据来源与步骤见 。"
+},
+{
+"id": 56,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "DAN** 是多巴胺神经元，决定\"什么时候改突触\"。"
+},
+{
+"id": 57,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "静默 KC（KCg-d、KCab-p）接收的主要是视觉输入，文献支持这点（文献核对 agent 只读了摘要）；"
+},
+{
+"id": 58,
+"src": "ml-cl-audit/BLOG.md",
+"text": "独立审查：（含对这篇文章本身的审阅）。"
+},
+{
+"id": 59,
+"src": "study/README.md",
+"text": "3. \"同隔间 MBON 的 KC 输入重叠度因果影响遗忘\"**未被确认**：控制 KC 入度同质性与学习量后，两个电路的偏回归系数都包含 0。"
+},
+{
+"id": 60,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "每个检验只有 30 到 60 个种子。"
+},
+{
+"id": 61,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我把有界乘法规则换成无界的加法规则。"
+},
+{
+"id": 62,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "(b) 未调参的 LIF 给出稠密 KC 编码（别人已报告过），我补上的是一个具体的细节：APL 抑制强度有陡峭相变，活跃比例与气味间重叠一起下降，但\"从不放电的 KC 比例\"始终很高，**没有任何设定同时给出稀疏、覆盖面广、气味特异的编码**。"
+},
+{
+"id": 63,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我挑了两个设定跑下游检验：规则选出的（1.3% 活跃，83% 的 KC 从不放电）和一个最接近文献 5% 的（4.7% 活跃，56% 从不放电）。"
+},
+{
+"id": 64,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "它展示了：预先登记与审查的纪律、用真实数据做工程的能力、公开更正自己结论的诚实。"
+},
+{
+"id": 65,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "没有一格显示\"不分隔间更差\"；"
+},
+{
+"id": 66,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "FlyWire 因类型名转移少了每侧 3 个 MBON，我修复后在事后检验里仍没有看到同样的差异，所以分歧没有来源。"
+},
+{
+"id": 67,
+"src": "ml-cl-audit/BLOG.md",
+"text": "MNIST-20 复现成功（最终 0.707，论文约 0.75，在 0.05 容差内；"
+},
+{
+"id": 68,
+"src": "fly-foraging/NOTES.md",
+"text": "果蝇进食即得奖励，蚂蚁要把食物带回巢才计奖励；"
+},
+{
+"id": 69,
+"src": "ml-cl-audit/BLOG.md",
+"text": "EWC / 回放（ER）**：给重要权重加惩罚；"
+},
+{
+"id": 70,
+"src": "ml-cl-audit/BLOG.md",
+"text": "ER-1000（0.76）和 SLDA（0.76）都高于 FlyModel（0.71）**，FlyModel 只在对 ER-200 这一档小缓冲时占优；"
+},
+{
+"id": 71,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "LIF**：漏积分发放神经元模型，一个真正的脉冲神经网络模型。"
+},
+{
+"id": 72,
+"src": "ml-cl-audit/BLOG.md",
+"text": "我登记的流本身就有缺陷。"
+},
+{
+"id": 73,
+"src": "ml-cl-audit/BLOG.md",
+"text": "看到结果后我加了一个探索性对照：论文式\"稠密编码失败\"的对照把稀疏表示的价值夸大了很多（MNIST-20 上约 17 倍）。"
+},
+{
+"id": 74,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "\"全脑 LIF 的 KC 不稀疏\"flybench 已经报告。"
+},
+{
+"id": 75,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "delta 规则没法靠调学习率匹配回路的学习量（它的准确率对学习率几乎不敏感），所以和 delta 的匹配学习量比较我标成\"不可比\"。"
+},
+{
+"id": 76,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "男性数据 4 个设定全为正；"
+},
+{
+"id": 77,
+"src": "fly-foraging/NOTES.md",
+"text": "蚁群与果蝇不是严格可比：机制不同（群体外部信息素 vs 个体内部记忆）；"
+},
+{
+"id": 78,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "4. **你最初的动机（RSI/AGI）在已做的工作里没有出现**。"
+},
+{
+"id": 79,
+"src": "ml-cl-audit/BLOG.md",
+"text": "5 遍训练的灵敏度分析没做。"
+},
+{
+"id": 80,
+"src": "fly-foraging/NOTES.md",
+"text": "fast：全部不成立（0 到 +2）。"
+},
+{
+"id": 81,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "4. **让没有上下文的审查者读代码很值**，尽管它和我是同一模型家族。"
+},
+{
+"id": 82,
+"src": "ml-cl-audit/BLOG.md",
+"text": "我用测试验证了打乱类顺序后结果不变）。"
+},
+{
+"id": 83,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我改\"隔间归属\"的时候，也在悄悄改入度同质性。"
+},
+{
+"id": 84,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "我的任务是\"随机气味配随机正负标签、随机放进 2 个隔间\"，而真实隔间有效价和时间尺度的专门化（短时与长时记忆、奖励与惩罚的 DAN），我一点没建模；"
+},
+{
+"id": 85,
+"src": "fly-foraging/NOTES.md",
+"text": "（更正，2026-10-14）** 此前这里写“事先的预期没有成立”，是错的：后续手动扫描遗忘（，登记 PREREG_forget.md）显示遗忘在波动世界里有益（fast +12，in-dist +10），在不反转世界里有害；"
+},
+{
+"id": 86,
+"src": "study/README.md",
+"text": "MLX 脑模型在 （本研究的学习模型不依赖它）。"
+},
+{
+"id": 87,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "2. **模型对真实蘑菇体是一个很弱的代理**，所以\"没发现效应\"说明不了真实果蝇。"
+},
+{
+"id": 88,
+"src": "study/README.md",
+"text": "8. 编码层接回真实 LIF 后，回路仍不如 EWC（8/8）；"
+},
+{
+"id": 89,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我把它写进了预先登记：要求 8 个设定里至少 7 个为正、至少 6 个校正后显著。"
+},
+{
+"id": 90,
+"src": "study/README.md",
+"text": "但未调参的 LIF 给出稠密、缺乏气味特异性的 KC 编码（67% 的 KC 活跃），匹配学习量比较在该编码下无法进行。"
+},
+{
+"id": 91,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "3 个无对应类型的 MBON 最初被丢弃，后来用较粗的隔间补回（事后）。"
+},
+{
+"id": 92,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "打乱隔间**（把 MBON 的隔间归属随机置换，每个隔间的大小不变）；"
+},
+{
+"id": 93,
+"src": "ml-cl-audit/BLOG.md",
+"text": "论文里的另外两个对手（GEM、BI-R）没有包含；"
+},
+{
+"id": 94,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "这个\"门控本身不降低遗忘\"的说法只是实现上的同义反复。"
+},
+{
+"id": 95,
+"src": "ml-cl-audit/BLOG.md",
+"text": "类内顺序流 / 任务内交错流**：基线训练时的样本顺序。"
+},
+{
+"id": 96,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "最站得住的讲法是：\"我用一个真实的连接组测试了一个流行的说法，通过预先登记和独立审查发现我自己最初的结论大部分不成立，并把评测上的教训整理出来\"，而不是\"我发现了蘑菇体隔间的作用\"。"
+},
+{
+"id": 97,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "遗忘有一个由学习量决定的上限。"
+},
+{
+"id": 98,
+"src": "ml-cl-audit/ASSESSMENT.md",
+"text": "6. 与你最初的 RSI/AGI 动机依然没有直接联系。"
+},
+{
+"id": 99,
+"src": "study/README.md",
+"text": "7. KC 稀疏化（调全局增益与 APL 抑制）没有产生稀疏、广覆盖、气味特异的编码；"
+},
+{
+"id": 100,
+"src": "fly-foraging/NOTES.md",
+"text": "stationary：shuffled 与 random 成立，real 1/3。"
+},
+{
+"id": 101,
+"src": "study/README.md",
+"text": "2. 有界乘法规则**不是**低遗忘的来源：无界加法规则在同样学习量下遗忘更少（22 个可比格子全部为负；"
+},
+{
+"id": 102,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "不分隔间**（每个任务更新所有 MBON）；"
+},
+{
+"id": 103,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "1. **过程质量，这是最硬的资产。"
+},
+{
+"id": 104,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "审查报告：（含对这篇博客本身的审阅）。"
+},
+{
+"id": 105,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "预先登记了两个对立的假设：\"主要是学得少\"和\"有界规则本身有保护作用\"。"
+},
+{
+"id": 106,
+"src": "ml-cl-audit/BLOG.md",
+"text": "3. **预先登记不能防止设计缺陷**，只能防止事后改判据；"
+},
+{
+"id": 107,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我用 MaleCNS 的全脑 LIF 模型（16.7 万个神经元，Shiu 等人的参数）从气味刺激生成 KC 活动，再喂给同一套学习与读出。"
+},
+{
+"id": 108,
+"src": "ml-cl-audit/BLOG.md",
+"text": "交错流里 ER-200 的最优学习率是 1e-5，恰好在网格最低边缘。"
+},
+{
+"id": 109,
+"src": "ml-cl-audit/BLOG.md",
+"text": "遗忘 / memory loss**：学习时准确率 − 全部学完后的准确率。"
+},
+{
+"id": 110,
+"src": "ml-cl-audit/BLOG.md",
+"text": "类内顺序流下更糟，学习时准确率只有约 0.52，最终 0.05。"
+},
+{
+"id": 111,
+"src": "fly-foraging/NOTES.md",
+"text": "此前（修改前）的初步结果：随机稀疏 − 真实 在冲突世界为 +12.4 [+6.1, +18.7]（60 个世界）。"
+},
+{
+"id": 112,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "我还查了男女分歧的来源：结构统计两边几乎一致（真实重叠度相对打乱的 z 值 7.5 到 8.7）；"
+},
+{
+"id": 113,
+"src": "ml-cl-audit/BLOG.md",
+"text": "我最初怀疑是权重饱和，探索性对照**否定了这个假设**：稠密特征去掉截断仍然很差，而 FlyModel 去掉截断反而从 0.71 掉到 0.48，说明截断本身是有益的正则。"
+},
+{
+"id": 114,
+"src": "study/README.md",
+"text": "6. 隔间标签与 DAN→MBON 连接高度一致（91%–93%），但部分来自共享解剖，不是独立证据。"
+},
+{
+"id": 115,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "FlyWire 的隔间标签是我从 hemibrain 按细胞类型名转移的，不是 FlyWire 自己标注的；"
+},
+{
+"id": 116,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "重叠度和 MBON 的 KC 入度同质性高度相关**（审查者测得 r≈−0.93），\"人为改变重叠度\"是混杂的。"
+},
+{
+"id": 117,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "审查确实抓到了实质错误：含 NaN 的种子是同一批、重叠度与入度混杂、\"多头\"基线与单头数学等价、学习量造成的地板效应。"
+},
+{
+"id": 118,
+"src": "fly-mb-compartments/ASSESSMENT.md",
+"text": "\"匹配学习量协议 + 审查清单\"是可以推广的。"
+},
+{
+"id": 119,
+"src": "ml-cl-audit/BLOG.md",
+"text": "每个类的权重只依赖该类自己的样本，本质上是随机稀疏特征上的类原型分类器。"
+},
+{
+"id": 120,
+"src": "ml-cl-audit/BLOG.md",
+"text": "FlyModel 的权重只增不减，特征也非负（我核对过三套特征最小值都是 0），所以\"每步截断到 1\"与\"累加后一次截断\"完全等价，**结果与样本顺序无关**；"
+},
+{
+"id": 121,
+"src": "fly-mb-compartments/BLOG.md",
+"text": "匹配学习量用线性插值，只覆盖到约 0.80 的学习准确率；"
+}
+]

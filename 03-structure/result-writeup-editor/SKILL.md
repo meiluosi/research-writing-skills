@@ -28,7 +28,7 @@ Run the steps in this order. Steps 1 and 7 are mandatory.
 python3 scripts/doc_metrics.py post1.md post2.md ...
 ```
 
-It reports narration density, first-person density, headings off the spine, limit sections, boilerplate (preface/outro/teaser lines), and near-duplicate sentences across files. Read the numbers as hints, then read the text. Mark reviewed lines you keep on purpose with `<!--keep-->`; headings such as a glossary or reproduction note are exempt by default (`--exempt`). The title block (h1 plus a one-line blockquote) is not boilerplate.
+It reports narration density (first-person work narration only; precision and recall are in `eval/README.md`, and impersonal change-log voice is not detected), first-person density, headings off the spine, limit sections, boilerplate (preface/outro/teaser lines), and near-duplicate sentences across files. Read the numbers as hints, then read the text. Mark reviewed lines you keep on purpose with `<!--keep-->`; headings such as a glossary or reproduction note are exempt by default (`--exempt`). The title block (h1 plus a one-line blockquote) is not boilerplate.
 
 Write a short edit plan: which rules apply to which file, expected size change, anything you will keep on purpose. In an interactive session show it before a large edit; in a non-interactive run print it at the top of the report, proceed with the standard defaults, and list the assumptions you made.
 

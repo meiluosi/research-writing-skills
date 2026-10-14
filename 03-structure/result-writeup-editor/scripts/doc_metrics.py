@@ -16,7 +16,7 @@ What it measures (heuristics, not verdicts):
   duplicates    near-identical sentences across files (character 8-gram Jaccard >= 0.6)
 """
 import sys, re, json, itertools, argparse
-ZH_NARR=re.compile(r"我们?(?:先|又|再|还|也|曾|才|就)?(?:做|查|写|把|试|跑|改|加|看|发现|选|用|补|删|重新|检查|验证|决定|想|担心|怀疑|起初|当时|最初|花|找|搭|拿|读|复核|核对|修|调|换|收|停|补做|补充|挑|定)")
+ZH_NARR=re.compile(r"我们?(?:先|又|再|还|也|曾|才|就|都|已经)?(?:做|查|写|把|试|跑|改|加|补|删|重新|检查|验证|选|用|花|找|搭|拿|读|复核|核对|修|调|换|收|停|挑|定|起了|预先登记|登记|更正|重跑)|(?:全部重跑|重新运行|重跑|已更正|后更正|在.{0,6}之后更正|补回|没做|未做|没有包含|被丢弃|已记入|已写进|写进了)")  # v0.3: dropped mental verbs (想/发现/怀疑/担心: stance or finding), added agentless process phrases
 EN_NARR=re.compile(r"\b(?:I|We)\s+(?:then\s+|also\s+|first\s+|later\s+|just\s+)?(?:did|ran|checked|wrote|added|tried|found|fixed|changed|decided|looked|tested|built|re-?ran|made|used|picked|switched|removed|rewrote|started)\b")
 ZH_FP=re.compile(r"[我](?!们的)"); EN_FP=re.compile(r"\b(?:I|my|me|we|our)\b",re.I)
 LIMIT=re.compile(r"局限|边界|盲区|没有证明|没解决|limitation|caveat|boundar|blind spot",re.I)
